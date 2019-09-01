@@ -10,9 +10,6 @@
     },
     "privateIp": {
       "type": "string"
-    },
-    "FortinetTags": {
-      "type": "object"
     }
   },
   "variables": {
@@ -22,9 +19,6 @@
       "apiVersion": "2017-09-01",
       "dependsOn": [
       ],
-      "tags": {
-        "provider": "[toUpper(parameters('FortinetTags').provider)]"
-      },
       "type": "Microsoft.Network/networkInterfaces",
       "name": "[parameters('nicName')]",
       "location": "[resourceGroup().location]",
