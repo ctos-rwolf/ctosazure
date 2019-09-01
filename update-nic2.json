@@ -36,7 +36,14 @@
             }
           ],
           "enableIPForwarding": true
-      }
+      },
+          "tags": {
+              "cost-center": "IT",
+              "environment": "Production",
+              "region": "CentralUS",
+              "resource-type": "Network Interface",
+              "provider": "[toUpper(parameters('FortinetTags').provider)]"
+          }
     }
   ],
   "outputs": {}
