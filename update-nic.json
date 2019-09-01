@@ -13,6 +13,9 @@
     },
     "publicIp": {
       "type": "string"
+    },
+    "FortinetTags": {
+      "type": "object"
     }
   },
   "variables": {
@@ -22,6 +25,13 @@
       "apiVersion": "2017-09-01",
       "dependsOn": [
       ],
+      "tags": {
+        "provider": "[toUpper(parameters('FortinetTags').provider)]",
+        "cost-center": "IT",
+        "environment": "Production",
+        "region": "CentralUS",
+        "resource-type": "Network Interface",
+      },
       "type": "Microsoft.Network/networkInterfaces",
       "name": "[parameters('nicName')]",
       "location": "[resourceGroup().location]",
@@ -42,14 +52,7 @@
             }
           ],
           "enableIPForwarding": true
-      },
-          "tags": {
-              "cost-center": "IT",
-              "environment": "Production",
-              "region": "CentralUS",
-              "resource-type": "Network Interface",
-              "provider": "[toUpper(parameters('FortinetTags').provider)]"
-          }
+      }
     }
   ],
   "outputs": {}
