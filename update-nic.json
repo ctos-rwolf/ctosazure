@@ -30,7 +30,7 @@
         "cost-center": "IT",
         "environment": "Production",
         "region": "CentralUS",
-        "resource-type": "Network Interface",
+        "resource-type": "Network Interface"
       },
       "type": "Microsoft.Network/networkInterfaces",
       "name": "[parameters('nicName')]",
